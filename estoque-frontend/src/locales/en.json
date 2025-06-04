@@ -1,0 +1,22 @@
+{
+  "stockControl": "Stock Control",
+  "productForm": "Product Registration",
+  "name": "Name",
+  "price": "Price",
+  "category": "Category",
+  "quantity": "Quantity",
+  "saveProduct": "Save Product",
+  "productList": "Product List",
+  "noProducts": "No products registered",
+  "save": "Save",
+  "cancel": "Cancel",
+  "edit": "Edit",
+  "delete": "Delete",
+  "connectionError": "Error connecting to server.",
+  "deleteError": "Delete error: ",
+  "networkDeleteError": "Network error while deleting.",
+  "editError": "Edit error: ",
+  "networkEditError": "Network error while editing.",
+  "formError": "Please fill all fields correctly.",
+  "saveError": "Error saving: "
+}
