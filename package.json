@@ -8,6 +8,8 @@
     "test": "react-app-rewired test"
   },
   "dependencies": {
+    "ajv": "^6.12.6",
+    "ajv-keywords": "^3.5.2",
     "i18next": "^21.6.14",
     "i18next-browser-languagedetector": "^6.1.2",
     "i18next-http-backend": "^1.4.1",
