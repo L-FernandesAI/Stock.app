@@ -3,10 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.SpaServices.Extensions;
 using EstoqueApp.Data;
-using Microsoft.Extensions.FileProviders;
-using System.IO;
 
 namespace EstoqueApp
 {
@@ -26,11 +23,6 @@ namespace EstoqueApp
             });
 
             services.AddControllersWithViews();
-
-            services.AddSpaStaticFiles(configuration =>
-            {
-                configuration.RootPath = "ClientApp/build";
-            });
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -42,39 +34,13 @@ namespace EstoqueApp
 
             app.UseCors("PermitirTudo");
 
-            // 🔥 Serve os arquivos estáticos (incluindo /locales)
             app.UseStaticFiles();
-
-            // 💣 Serve arquivos do SPA (React build)
-            if (!env.IsDevelopment())
-            {
-                app.UseSpaStaticFiles();
-            }
-
-            // 👀 Serve /public/locales mesmo fora do build
-            app.UseStaticFiles(new StaticFileOptions
-            {
-                FileProvider = new PhysicalFileProvider(
-                    Path.Combine(env.ContentRootPath, "ClientApp", "public")),
-                RequestPath = ""
-            });
 
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
-            });
-
-            app.UseSpa(spa =>
-            {
-                spa.Options.SourcePath = "ClientApp";
-
-                if (env.IsDevelopment())
-                {
-                    // 👇 Aponta pro React Dev Server
-                    spa.UseProxyToSpaDevelopmentServer("http://localhost:3000");
-                }
             });
         }
     }
