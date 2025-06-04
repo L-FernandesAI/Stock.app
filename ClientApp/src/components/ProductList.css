@@ -1,0 +1,156 @@
+.product-list-container {
+  width: 85vw;
+  margin: 40px auto;
+  padding: 30px;
+  background: #181818;
+  border: 1px solid #2a2a2a;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease-in-out;
+}
+
+.product-list-container h2 {
+  font-size: 26px;
+  margin-bottom: 25px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.product-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.product-card {
+  background-color: #1f1f1f;
+  padding: 32px;
+  border-radius: 16px;
+  border: 1px solid #2e2e2e;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.product-card:hover {
+  transform: scale(1.01);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+}
+
+.view-group span {
+  font-size: 15px;
+  color: #ddd;
+  text-align: left;
+}
+
+.edit-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px 30px;
+  margin-bottom: 10px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.edit-group input,
+.edit-group label {
+  font-size: 14px;
+}
+
+.edit-group input {
+  background-color: #2b2b2b;
+  border: 1px solid #444;
+  padding: 10px 14px;
+  border-radius: 10px;
+  color: #fff;
+  width: 100%;
+  margin-top: 2px;
+  box-sizing: border-box;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 10px;
+  grid-column: span 2;
+}
+
+button {
+  padding: 10px 16px;
+  border: none;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+}
+
+.edit {
+  background-color: #3a3a3a;
+  color: #fff;
+}
+
+.delete {
+  background-color: #444;
+  color: #fff;
+}
+
+.edit:hover,
+.delete:hover {
+  background-color: #555;
+}
+
+.save {
+  background-color: #3a3a3a;
+  color: #fff;
+}
+
+.cancel {
+  background-color: #444;
+  color: #fff;
+}
+
+.save:hover,
+.cancel:hover {
+  background-color: #555;
+}
+
+.empty {
+  font-style: italic;
+  color: #999;
+  text-align: center;
+}
+.language-switcher {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.language-switcher button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.alert-success {
+  background-color: #1e4620;
+  color: #d4edda;
+  border: 1px solid #155724;
+  padding: 12px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-align: center;
+}
