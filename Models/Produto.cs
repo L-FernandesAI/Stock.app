@@ -1,6 +1,5 @@
 using System;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema; // 👈 NECESSÁRIO PRA [Column]
 
 namespace EstoqueApp.Models
 {
@@ -20,7 +19,6 @@ namespace EstoqueApp.Models
 
         [Required(ErrorMessage = "Preço é obrigatório")]
         [Range(0.01, double.MaxValue, ErrorMessage = "Preço deve ser maior que zero")]
-        [Column(TypeName = "decimal(10,2)")] // 👈 AQUI É ONDE A MAGIA ACONTECE
         public decimal Preco { get; set; }
 
         public DateTime DataCadastro { get; set; } = DateTime.Now;

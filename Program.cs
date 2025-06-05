@@ -14,6 +14,6 @@ namespace EstoqueApp
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>()
-                .UseUrls("http://0.0.0.0:10000"); // Porta explícita pra Render enxergar
+                .UseUrls("http://0.0.0.0:10000"); 
     }
 }

@@ -27,11 +27,11 @@ namespace EstoqueApp
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            // Joga as migrações no banco no boot da aplicação
+           
             using (var scope = app.ApplicationServices.CreateScope())
             {
                 var context = scope.ServiceProvider.GetRequiredService<EstoqueDbContext>();
-                context.Database.Migrate(); // SEM ESSA LINHA, TUA TABELA NÃO NASCE
+                context.Database.Migrate(); 
             }
 
             if (env.IsDevelopment())
@@ -39,13 +39,13 @@ namespace EstoqueApp
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseRouting();             // Primeiro roteia
-            app.UseCors("PermitirTudo");  // Depois libera geral
-            app.UseAuthorization();       // Aí autentica (se usar auth)
+            app.UseRouting();             
+            app.UseCors("PermitirTudo");  
+            app.UseAuthorization();       
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers(); // E finalmente joga nos controllers
+                endpoints.MapControllers(); 
             });
         }
     }

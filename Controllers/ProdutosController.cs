@@ -48,11 +48,11 @@ namespace EstoqueApp.Controllers
             var p = _context.Produtos.Find(id);
             if (p == null) return NotFound();
 
-            // 🔍 DEBUG PESADO: VERIFICANDO O QUE TÁ VINDO DO FRONT
+        
             Console.WriteLine($"⛏️ EDITANDO PRODUTO {id}: DE {p.Preco} PARA {produto.Preco}");
 
             p.Nome = produto.Nome;
-            p.Preco = produto.Preco; // 👈 LINHA CRUCIAL AGORA FUNCIONAL
+            p.Preco = produto.Preco; 
             p.Categoria = produto.Categoria;
             p.Quantidade = produto.Quantidade;
 
