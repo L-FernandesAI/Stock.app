@@ -22,27 +22,25 @@ namespace EstoqueApp
                            .AllowAnyHeader());
             });
 
-            services.AddControllersWithViews();
+            services.AddControllers();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            // Tira o modo Nutella de dev
-            // app.UseDeveloperExceptionPage(); // deixa comentado por enquanto
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
 
-            // LIBERA CORS GERAL
-            app.UseCors("PermitirTudo");
+            app.UseRouting(); // PRIMEIRO
 
-            app.UseStaticFiles();
+            app.UseCors("PermitirTudo"); // ENTRE routing e endpoints
 
-            app.UseRouting();
-
-            app.UseAuthorization();
+            app.UseAuthorization(); // Se tiver auth, mantém
 
             app.UseEndpoints(endpoints =>
             {
-                // Garante que usa a policy até aqui
-                endpoints.MapControllers().RequireCors("PermitirTudo");
+                endpoints.MapControllers(); // FINAL
             });
         }
     }
