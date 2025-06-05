@@ -27,20 +27,22 @@ namespace EstoqueApp
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
+            // Tira o modo Nutella de dev
+            // app.UseDeveloperExceptionPage(); // deixa comentado por enquanto
 
+            // LIBERA CORS GERAL
             app.UseCors("PermitirTudo");
 
             app.UseStaticFiles();
 
             app.UseRouting();
 
+            app.UseAuthorization();
+
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers();
+                // Garante que usa a policy até aqui
+                endpoints.MapControllers().RequireCors("PermitirTudo");
             });
         }
     }
