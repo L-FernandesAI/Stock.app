@@ -37,7 +37,7 @@ function ProductList({ produtos, onDelete, onEdit }) {
       quantidade: parseInt(quantidadeEdit, 10),
     };
 
-    console.log("ENVIANDO PARA EDIT:", produtoEditado); // 🔍 LOG AQUI
+    console.log("ENVIANDO PARA EDIT:", produtoEditado);
 
     onEdit(edicaoId, produtoEditado);
     cancelarEdicao();
