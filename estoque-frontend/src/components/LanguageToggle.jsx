@@ -16,6 +16,7 @@ const LanguageToggle = () => {
 
   return (
     <div
+      className="language-switcher"
       style={{
         display: "flex",
         justifyContent: "center",

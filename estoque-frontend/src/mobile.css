@@ -1,0 +1,129 @@
+@media (max-width: 768px) {
+  body {
+    padding: 20px 16px;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-x: hidden;
+  }
+
+  form {
+    grid-template-columns: 1fr !important;
+    padding: 24px 16px !important;
+    width: 100% !important;
+    max-width: 360px;
+    margin: auto;
+    box-sizing: border-box;
+  }
+
+  form h2,
+  form button {
+    grid-column: span 1 !important;
+  }
+
+  .product-list {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  .edit-group {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  .btn-group {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    grid-column: span 1 !important;
+  }
+
+  .product-list-container {
+    width: 100% !important;
+    max-width: 360px;
+    padding: 20px 16px !important;
+    margin: 24px auto 0;
+    box-sizing: border-box;
+  }
+
+  h1 {
+    text-align: center;
+    padding-left: 16px;
+    padding-right: 16px;
+    box-sizing: border-box;
+  }
+
+  .language-switcher {
+    display: none !important;
+  }
+
+  .language-hamburger {
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 10px;
+    margin-bottom: 12px;
+    position: relative;
+  }
+
+  .hamburger-btn {
+    font-size: 24px;
+    background: #222;
+    color: #fff;
+    border: 1px solid #444;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .hamburger-btn:hover {
+    background-color: #333;
+  }
+
+  .language-menu {
+    position: absolute;
+    top: 0;
+    left: 55px;
+    background-color: rgba(50, 50, 50, 0.85);
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 9999;
+    animation: fadeInSide 0.2s ease;
+    width: 180px;
+  }
+
+  .language-menu button {
+    background: #333;
+    color: #fff;
+    border: 1px solid #555;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+  }
+
+  .language-menu button:hover {
+    background-color: #444;
+  }
+
+  @keyframes fadeInSide {
+    from {
+      opacity: 0;
+      transform: translateX(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
+
+@media (min-width: 769px) {
+  .language-hamburger {
+    display: none;
+  }
+}

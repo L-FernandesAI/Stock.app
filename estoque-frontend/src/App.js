@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import ProductForm from "./components/ProductForm";
 import ProductList from "./components/ProductList";
 import LanguageToggle from "./components/LanguageToggle";
+import LanguageMobileMenu from "./components/LanguageMobileMenu";
 import { useTranslate } from "./context/TranslationContext";
-import "./index.css";
 
 function App() {
   const { t } = useTranslate();
@@ -76,6 +76,8 @@ function App() {
   return (
     <div>
       <LanguageToggle />
+      <LanguageMobileMenu />
+
       <h1 style={{ textAlign: "center", marginTop: "20px" }}>
         {t("stockControl")}
       </h1>
